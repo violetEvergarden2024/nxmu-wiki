@@ -1,0 +1,88 @@
+# ==================== 站点基本信息 ====================
+site_name: 宁夏医科大学Wikipedia
+site_description: 致力于为宁医er提供全面的信息
+site_author: Justin
+site_url: https://sdsmu-companion.netlify.app
+
+
+# ==================== 主题配置 ====================
+theme:
+  name: material                    # 使用 Material 主题
+  language: zh                      # 中文界面
+  
+  # 配色方案（支持亮色/暗色切换）
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: 切换到暗色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: 切换到亮色模式
+  
+  # 功能特性
+  features:
+    - navigation.tabs           # 顶部标签导航
+    - navigation.sections       # 章节分组
+    - navigation.expand         # 自动展开侧边栏
+    - search.suggest            # 搜索建议
+    - search.highlight          # 搜索结果高亮
+    - content.code.copy         # 代码块复制按钮
+    - content.action.edit       # 编辑按钮
+  
+  # 图标
+  icon:
+    repo: fontawesome/brands/github
+
+
+# ==================== 插件配置 ====================
+plugins:
+  - search:
+      lang:
+        - zh                    # 中文搜索
+        - en                    # 英文搜索
+  - minify:
+      minify_html: true          # 压缩 HTML
+
+
+# ==================== Markdown 扩展 ====================
+markdown_extensions:
+  - admonition                   # 提示框（如 !!! note）
+  - pymdownx.details             # 折叠详情
+  - pymdownx.superfences        # 增强代码块
+  - pymdownx.tabbed             # 标签页
+  - tables                       # 表格
+  - toc:
+      permalink: true            # 标题添加锚点链接
+
+
+# ==================== 额外配置 ====================
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/violetEvergarden2024/nxmu-wiki
+      name: GitHub
+  generator: false               # 隐藏 "Made with Material for MkDocs"
+
+
+# ==================== 版权信息 ====================
+copyright: 联系我 justin_kong@qq.com
+
+
+# ==================== 导航菜单 ====================
+nav:
+  - 首页: index.md
+  - 新生指南:
+      - 入学准备: freshman/preparation.md    
+      - 报到流程: freshman/registration.md   
+  - 校园生活:
+      - 食堂: life/canteen.md
+      - 宿舍: life/dormitory.md
+  - 关于: about.md
